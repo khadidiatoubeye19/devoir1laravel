@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ClasseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/classe',  [ClasseController::class, 'vu']);
+Route::post('/classe', [ClasseController::class, 'enregistrer']);
+Route::post('/supprimer', [ClasseController::class, 'enregistrer']);

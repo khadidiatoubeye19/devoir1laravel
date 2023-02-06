@@ -130,3 +130,16 @@
         </div>
     </body>
 </html>
+
+
+
+
+Schema::create('etudiants', function (Blueprint $table) {
+    $table->id();
+    $table->string('nom');
+    $table->string('prenom');
+    $table->integer('note');
+    $table->foreignId('matiere_id')->constrained();
+    $table->foreignId('examen_id')->constrained();
+    $table->timestamps();
+});
