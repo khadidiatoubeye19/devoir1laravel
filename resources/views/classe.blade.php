@@ -322,12 +322,13 @@ $p=$etudiant[0];
 				<tbody>
 					<tr>
 					@foreach ( $etudiant as $m)
-                    @php
-  $moyenG=($moyen+$m->note+$m->examen)/$nbetudiant
-                    @endphp
+
                                       @php
  $moyen=($m->note+$m->examen)/2
                                                         @endphp
+                     @php
+                     $moyenG=($moyenG+$moyen)
+                                       @endphp
                  <?php
 
                 if($moyen >($p->note+$p->examen)/2){
@@ -390,7 +391,11 @@ $p=$etudiant[0];
 		</div>
 	</div>
 </div>
-<h2>la Moyenne General {{$moyen}}</h1>
+@php
+$M=$moyenG/$nbetudiant
+@endphp
+
+<h2>la Moyenne General {{$M}}</h1>
 
     <h3>l'etudiant qui est le premier est {{$p->prenom}} {{$p->nom}}</h3>
 

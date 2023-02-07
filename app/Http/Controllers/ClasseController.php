@@ -14,7 +14,7 @@ class ClasseController extends Controller
         $nbetudiant = DB::table('etudiants')->count();
         $matiere=matiere::all();
         $semestre=semestre::all();
-       
+
 
         return view('classe',compact('etudiant','semestre','matiere','nbetudiant'));
     }
@@ -34,7 +34,7 @@ class ClasseController extends Controller
                 ->with('message', 'enregistrement avec Succee!');
     }
 
-public function destroy(Request $request)
+public function supprimer(Request $request)
 {
   $etudiant = etudiant::findOrFail($request->idab);
 
