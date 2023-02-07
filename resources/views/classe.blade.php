@@ -391,7 +391,7 @@ $p=$etudiant[0];
 	</div>
 </div>
 <h2>la Moyenne General {{$moyen}}</h1>
- 
+
     <h3>l'etudiant qui est le premier est {{$p->prenom}} {{$p->nom}}</h3>
 
 
